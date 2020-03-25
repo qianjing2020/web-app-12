@@ -11,8 +11,7 @@
   <h2>Welcome to the Books Page</h2>
   <p>{{ message }}</p>
   
-  {% if books %}  
-  <!--jinja: inside  curly bracelet and % is python language-->
+  {% if books %}   
     <ul>
       {% for book in books %}
         <li>{{ book["title"] }}</li>

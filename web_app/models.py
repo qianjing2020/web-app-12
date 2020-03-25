@@ -13,6 +13,8 @@ class Book(db.Model):
     title = db.Column(db.String(128))
     author = db.Column(db.String(128))
 
+print(type(Book))
+
 def parse_records(database_records):
     """
     A helper method for converting a list of database record objects into a list of dictionaries, so they can be returned as JSON
