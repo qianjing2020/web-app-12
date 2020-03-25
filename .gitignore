@@ -1,0 +1,3 @@
+#ignore development database:
+*.db
+*.sqlite3

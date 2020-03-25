@@ -1,7 +1,7 @@
 # web_app/__init__.py
 
 from flask import Flask
-
+from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 
 from web_app.routes.book_routes import book_routes
@@ -9,9 +9,17 @@ from web_app.routes.book_routes import book_routes
 def create_app():
     # flask factories
     app = Flask(__name__)
+
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///web_app.db"
+    #app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:////Users/jing/Documents/LambdaSchool/LS_DS_unit3/DS-Unit-3-Sprint-3-Production-and-Cloud/web-app-12/web_app.db"
+
+    db.init_app(app)
+    migrate.init_app(app, db)
+   
     app.register_blueprint(home_routes)
     app.register_blueprint(book_routes)
     #regiter the routes blueprints so app will recognize them
+     
     return app
 
 if __name__ == "__main__":
