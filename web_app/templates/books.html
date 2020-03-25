@@ -15,9 +15,10 @@
   <!--jinja: inside  curly bracelet and % is python language-->
     <ul>
       {% for book in books %}
-      <li>{{ book["title"] }}</li>
+        <li>{{ book["title"] }}</li>
       {% endfor %}
     </ul>
+    
   {% else %}
     <p>Books not found.</p>
   {% endif %}

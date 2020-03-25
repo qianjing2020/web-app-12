@@ -15,18 +15,19 @@
     <div class="container">
       <div id="nav">
         {% block nav %}
-        <h1><a href="/">My Web App</a></h1>
-        <ul>
-          <li><a href="/books">Books Page</a></li>
-          <li><a href="/books/new">New Book Form</a></li>
-        </ul>
+          <h1><a href="/">My Web App</a></h1>
+          <ul>
+            <li><a href="/books">Books Page</a></li>
+            <li><a href="/books/new">New Book Form</a></li>
+          </ul>
         {% endblock %}
       </div>
       <hr />
 
       <!-- PAGE CONTENTS -->
       <div id="content">
-        {% block content %} {% endblock %}
+        {% block content %} 
+        {% endblock %}
       </div>
 
       <!-- FOOTER -->
@@ -35,6 +36,7 @@
         &copy; Copyright 2020 Jing Qian |
         <a href="https://github.com/qianjing2020/">source</a>
       </div>
+      
     </div>
   </body>
 </html>

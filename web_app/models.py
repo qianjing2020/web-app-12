@@ -9,8 +9,9 @@ migrate = Migrate()
 
 class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    genre = db.Column(db.String(128))
     title = db.Column(db.String(128))
-    author_id = db.Column(db.String(128))
+    author = db.Column(db.String(128))
 
 def parse_records(database_records):
     """
