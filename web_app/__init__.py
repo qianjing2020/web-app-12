@@ -10,8 +10,8 @@ def create_app():
     # flask factories
     app = Flask(__name__)
     app.register_blueprint(home_routes)
-    #regiter the home_routes blueprint so app will recognize it
     app.register_blueprint(book_routes)
+    #regiter the routes blueprints so app will recognize them
     return app
 
 if __name__ == "__main__":

@@ -1,20 +1,26 @@
 <!-- web_app/templates/books.html -->
 
-{% extends "layout.html" %} {% block title %}
-<title>Books Page</title>
-{% endblock %} {% block content %}
+{% extends "layout.html" %} 
 
-<h2>Welcome to the Books Page</h2>
+{% block title %}
+  <title>Books Page</title>
+{% endblock %} 
 
-<p>{{ message }}</p>
 
-{% if books %}
-<ul>
-  {% for book in books %}
-  <li>{{ book["title"] }}</li>
-  {% endfor %}
-</ul>
+{% block content %}  
+  <h2>Welcome to the Books Page</h2>
+  <p>{{ message }}</p>
+  
+  {% if books %}  
+  <!--jinja: inside  curly bracelet and % is python language-->
+    <ul>
+      {% for book in books %}
+      <li>{{ book["title"] }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Books not found.</p>
+  {% endif %}
 
-{% else %}
-<p>Books not found.</p>
-{% endif %} {% endblock %}
+  
+{% endblock %}

@@ -1,22 +1,33 @@
 <!-- web_app/templates/new_book.html -->
 
-{% extends "layout.html" %} {% block content %}
+{% extends "layout.html" %} 
 
-<h1>New Book Page</h1>
+{% block content %}
 
-<p>Please fill out the form and submit to create a new book!</p>
+  <h1>New Book Page</h1>
 
-<form action="/books/create" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title" placeholder="Book XYZ" value="Book XYZ" />
+  <p>Please fill out the form and submit to create a new book!</p>
 
-  <label>Author:</label>
-  <select name="author_name">
-    <option value="A1">Author 1</option>
-    <option value="A2">Author 2</option>
-    <option value="A3">Author 3</option>
-  </select>
+  <a href="/books">Books Page.</a>
 
-  <button>Submit</button>
-</form>
+
+  <form action="/books/create" method="POST">
+    
+    <label>Genre:</label>
+    <select name="genre">
+      <option value="Poetry">Poetry</option>
+      <option value="Drama">Drama</option>
+      <option value="Prose">Prose</option>
+      <option value="Nonfiction">Nonfiction</option>
+      <option value="Media">Media</option>
+    </select>
+
+    <label>Title:</label>
+    <input type="text" name="title" placeholder="Book XYZ" value="Book XYZ" />
+
+    <label>Author:</label>
+    <input type="text" name="author" placeholder="Gram Smith" value="Gram Smith">
+
+    <button>Submit</button>
+  </form>
 {% endblock %}

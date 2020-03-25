@@ -5,7 +5,9 @@ from flask import Blueprint, jsonify, request, render_template #, flash, redirec
 book_routes = Blueprint("book_routes", __name__)
 
 @book_routes.route("/books.json")
-def list_books():
+# joson format book list
+def list_books_json():
+    print("Requested books in JSON format")
     books = [
         {"id": 1, "title": "Book 1"},
         {"id": 2, "title": "Book 2"},
@@ -27,8 +29,9 @@ def new_book():
     return render_template("new_book.html")
 
 @book_routes.route("/books/create", methods=["POST"])
+# note this match the <form action in new_book.html
 def create_book():
-    print("FORM DATA:", dict(request.form))
+    print("New form entry:", dict(request.form))
     # todo: store in database
     return jsonify({
         "message": "BOOK CREATED OK (TODO)",
