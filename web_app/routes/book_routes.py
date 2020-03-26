@@ -36,4 +36,6 @@ def create_book():
     db.session.commit()
 
     #flash(f"Book '{new_book.title}' created successfully!", "success")
+    # This flash line caused a error message
+    # RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
     return redirect(f"/books")
